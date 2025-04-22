@@ -16,8 +16,6 @@ def main():
     X_test = pd.read_csv(os.path.join(data_dir, 'X_test.csv'), parse_dates = ['date'])
     logger.info(f'Loaded data from {data_dir}/X_train.csv and {data_dir}/X_test.csv')
 
-    print(X_train.info())
-
     X_train["year"] = X_train["date"].dt.year
     X_train["month"] = X_train["date"].dt.month
     X_train["day"] = X_train["date"].dt.day
@@ -41,8 +39,6 @@ def main():
     X_train_scaled.to_csv(os.path.join(data_dir, 'X_train_scaled.csv'), index=False)
     X_test_scaled.to_csv(os.path.join(data_dir, 'X_test_scaled.csv'), index=False)
 
-    print(X_train_scaled.info())
-    print(X_train_scaled.head())
     logger.info('Normalized data saved to processed_data directory')
 
 
