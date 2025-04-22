@@ -47,11 +47,11 @@ def main():
         'r2_train': r2_train
     }
 
-    metrics_path = "metrics/metrics.json"
+    metrics_path = "metrics/scores.json"
 
     with open(metrics_path, 'w') as f:
         json.dump(metrics, f)
-        
+
     logger.info(f'Metrics saved to {metrics_path}')
 
 

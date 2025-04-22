@@ -45,4 +45,4 @@ stages:
     - src/models/evaluation.py
     - models/ridge_linear_regression_trained.pkl
     outs:
-    - metrics/metrics.json
+    - metrics/scores.json
