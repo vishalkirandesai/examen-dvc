@@ -80,3 +80,23 @@ stages:
       hash: md5
       md5: 7883d363ad72aed370c61f4967c5e904
       size: 1199
+  training:
+    cmd: python src/models/training.py
+    deps:
+    - path: data/processed_data/X_train_scaled.csv
+      hash: md5
+      md5: c77ebb148695f095fd57815b499e026f
+      size: 318243
+    - path: data/processed_data/y_train.csv
+      hash: md5
+      md5: a9cd9d91da89f732843d72548f64ded3
+      size: 25951
+    - path: src/models/training.py
+      hash: md5
+      md5: 9a695ad37eb08fc5fa4f073dcaf44208
+      size: 1239
+    outs:
+    - path: models/ridge_linear_regression_trained.pkl
+      hash: md5
+      md5: 7883d363ad72aed370c61f4967c5e904
+      size: 1199
