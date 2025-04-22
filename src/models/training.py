@@ -5,20 +5,20 @@ import os
 import joblib
 
 def main():
-    """ Runs grid search to search for the best parameters for the regression model.
+    """ Runs training for the regression model.
     """
     logger = logging.getLogger(__name__)
-    logger.info('Normalizing data')
+    logger.info('Training the ridge regression model')
 
     data_dir = "data/processed_data"
 
     # Load the scaled data
     X_train_scaled = pd.read_csv(os.path.join(data_dir, 'X_train_scaled.csv'))
-    logger.info(f'Loaded data from {data_dir}/X_train_scaled.csv and {data_dir}/X_test_scaled.csv')
+    logger.info(f'Loaded data from {data_dir}/X_train_scaled.csv')
 
     # Load the target data
     y_train = pd.read_csv(os.path.join(data_dir, 'y_train.csv'))
-    logger.info(f'Loaded target data from {data_dir}/y_train.csv and {data_dir}/y_test.csv')
+    logger.info(f'Loaded target data from {data_dir}/y_train.csv')
 
     model = joblib.load("models/ridge_linear_regression.pkl")
 
