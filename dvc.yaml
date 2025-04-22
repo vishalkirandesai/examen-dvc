@@ -32,5 +32,6 @@ stages:
     - data/processed_data/X_train_scaled.csv
     - data/processed_data/y_train.csv
     - src/models/training.py
+    - models/ridge_linear_regression.pkl
     outs:
     - models/ridge_linear_regression_trained.pkl

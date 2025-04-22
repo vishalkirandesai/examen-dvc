@@ -83,6 +83,10 @@ stages:
       hash: md5
       md5: a9cd9d91da89f732843d72548f64ded3
       size: 25951
+    - path: models/ridge_linear_regression.pkl
+      hash: md5
+      md5: 7883d363ad72aed370c61f4967c5e904
+      size: 1199
     - path: src/models/training.py
       hash: md5
       md5: 790ef6a0284895110727bddb8b0d63ec
