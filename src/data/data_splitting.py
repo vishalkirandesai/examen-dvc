@@ -15,7 +15,7 @@ def main():
     output_dir = "data/processed_data"
     target = "silica_concentrate"
 
-    df = pd.read_csv(os.path.join(input_dir, 'raw.csv'))
+    df = pd.read_csv(os.path.join(input_dir, 'raw.csv'), parse_dates=['date'])
     logger.info(f'Loaded data from {input_dir}/raw.csv')
     logger.info(f'Data shape: {df.shape}')
 
