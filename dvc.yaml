@@ -26,7 +26,7 @@ stages:
     - src/data/grid_search.py
     outs:
     - models/ridge_linear_regression.pkl
-  training:
+  train:
     cmd: python src/models/training.py
     deps:
     - data/processed_data/X_train_scaled.csv
@@ -35,3 +35,14 @@ stages:
     - models/ridge_linear_regression.pkl
     outs:
     - models/ridge_linear_regression_trained.pkl
+  evaluate:
+    cmd: python src/models/evaluation.py
+    deps:
+    - data/processed_data/X_train_scaled.csv
+    - data/processed_data/X_test_scaled.csv
+    - data/processed_data/y_train.csv
+    - data/processed_data/y_test.csv
+    - src/models/evaluation.py
+    - models/ridge_linear_regression_trained.pkl
+    outs:
+    - metrics/metrics.json

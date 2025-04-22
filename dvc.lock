@@ -96,3 +96,59 @@ stages:
       hash: md5
       md5: 7883d363ad72aed370c61f4967c5e904
       size: 1199
+  train:
+    cmd: python src/models/training.py
+    deps:
+    - path: data/processed_data/X_train_scaled.csv
+      hash: md5
+      md5: c77ebb148695f095fd57815b499e026f
+      size: 318243
+    - path: data/processed_data/y_train.csv
+      hash: md5
+      md5: a9cd9d91da89f732843d72548f64ded3
+      size: 25951
+    - path: models/ridge_linear_regression.pkl
+      hash: md5
+      md5: 7883d363ad72aed370c61f4967c5e904
+      size: 1199
+    - path: src/models/training.py
+      hash: md5
+      md5: 790ef6a0284895110727bddb8b0d63ec
+      size: 1162
+    outs:
+    - path: models/ridge_linear_regression_trained.pkl
+      hash: md5
+      md5: 7883d363ad72aed370c61f4967c5e904
+      size: 1199
+  evaluate:
+    cmd: python src/models/evaluation.py
+    deps:
+    - path: data/processed_data/X_test_scaled.csv
+      hash: md5
+      md5: be9c609c0e67a67a66eb2e3d86a2309a
+      size: 79797
+    - path: data/processed_data/X_train_scaled.csv
+      hash: md5
+      md5: c77ebb148695f095fd57815b499e026f
+      size: 318243
+    - path: data/processed_data/y_test.csv
+      hash: md5
+      md5: a051d29629c8bbb4cfb7e85c7f0315da
+      size: 6456
+    - path: data/processed_data/y_train.csv
+      hash: md5
+      md5: a9cd9d91da89f732843d72548f64ded3
+      size: 25951
+    - path: models/ridge_linear_regression_trained.pkl
+      hash: md5
+      md5: 7883d363ad72aed370c61f4967c5e904
+      size: 1199
+    - path: src/models/evaluation.py
+      hash: md5
+      md5: ba260f1f58335dd896f8f49f51eb7d1e
+      size: 2109
+    outs:
+    - path: metrics/metrics.json
+      hash: md5
+      md5: 08c0b406be0bec46cdee5e94e9024688
+      size: 147
